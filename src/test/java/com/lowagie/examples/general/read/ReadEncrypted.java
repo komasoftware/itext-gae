@@ -34,7 +34,7 @@ public class ReadEncrypted {
 		try {
 			BufferedWriter out = new BufferedWriter(new FileWriter(
 					"info_encrypted.txt"));
-			PdfReader r = new PdfReader("HelloEncrypted.pdf", "Hello"
+			PdfReader r = new PdfReader(ReadEncrypted.class.getClassLoader().getResource("HelloEncrypted.pdf"), "Hello"
 						.getBytes());
 			out.write(r.getInfo().toString());
 			out.write("\r\n");

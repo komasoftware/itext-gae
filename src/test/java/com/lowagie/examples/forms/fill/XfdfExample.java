@@ -33,7 +33,7 @@ public class XfdfExample {
             // merging the FDF file
             PdfReader pdfreader = new PdfReader("SimpleRegistrationForm.pdf");
             PdfStamper stamp = new PdfStamper(pdfreader, new FileOutputStream("registered_xfdf.pdf"));
-            XfdfReader fdfreader = new XfdfReader("register.xfdf");
+            XfdfReader fdfreader = new XfdfReader(XfdfExample.class.getClassLoader().getResource("register.xfdf").getFile());
             AcroFields form = stamp.getAcroFields();
             form.setFields(fdfreader);
             stamp.close();

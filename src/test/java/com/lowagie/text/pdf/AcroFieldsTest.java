@@ -8,17 +8,17 @@ public class AcroFieldsTest {
     
     @Test
     public void testSetFields() throws Exception {
-        singleTest("register.xfdf");
+        singleTest(AcroFieldsTest.class.getClassLoader().getResource("register.xfdf").getFile());
     }
 
     @Test
     public void testListInSetFields() throws Exception {
-        singleTest("list_register.xfdf");
+        singleTest(AcroFieldsTest.class.getClassLoader().getResource("list_register.xfdf").getFile());
     }
     
     private void singleTest(String xfdfFileName) throws Exception {
         // merging the FDF file
-        PdfReader pdfreader = new PdfReader("SimpleRegistrationForm.pdf");
+        PdfReader pdfreader = new PdfReader(AcroFieldsTest.class.getClassLoader().getResource("SimpleRegistrationForm.pdf"));
         PdfStamper stamp = new PdfStamper(pdfreader, new ByteArrayOutputStream());
         XfdfReader fdfreader = new XfdfReader(xfdfFileName);
         AcroFields form = stamp.getAcroFields();
