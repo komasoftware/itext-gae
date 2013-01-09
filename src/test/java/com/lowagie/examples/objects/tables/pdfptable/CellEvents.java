@@ -61,7 +61,7 @@ public class CellEvents implements PdfPCellEvent {
 			document.open();
 			// step4
 			CellEvents event = new CellEvents();
-			Image im = Image.getInstance("otsoe.jpg");
+			Image im = Image.getInstance(CellEvents.class.getClassLoader().getResource("otsoe.jpg"));
 			im.setRotationDegrees(30);
 			PdfPTable table = new PdfPTable(4);
 			table.addCell("text 1");

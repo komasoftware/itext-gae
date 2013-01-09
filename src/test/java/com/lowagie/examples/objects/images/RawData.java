@@ -50,7 +50,7 @@ public class RawData {
             // step 4: we add content (example by Paulo Soares)
             
             // creation a jpeg passed as an array of bytes to the Image
-            RandomAccessFile rf = new RandomAccessFile("otsoe.jpg", "r");
+            RandomAccessFile rf = new RandomAccessFile(RawData.class.getClassLoader().getResource("otsoe.jpg").getFile(), "r");
             int size = (int)rf.length();
             byte imext[] = new byte[size];
             rf.readFully(imext);

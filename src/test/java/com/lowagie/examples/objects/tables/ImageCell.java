@@ -47,7 +47,7 @@ public class ImageCell {
 
 			// step 3: we open the document
 			document.open();
-			Image image = Image.getInstance("otsoe.jpg");
+			Image image = Image.getInstance(ImageCell.class.getClassLoader().getResource("otsoe.jpg"));
 			float[] widths = {1f, 4f};
 			PdfPTable table = new PdfPTable(widths);
 			table.addCell("This is my dog");

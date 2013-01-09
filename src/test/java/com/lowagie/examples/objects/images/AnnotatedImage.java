@@ -41,11 +41,11 @@ public class AnnotatedImage {
             // step 3: we open the document
             document.open();
             // step 4: we add some content
-            Image jpeg = Image.getInstance("otsoe.jpg");
+            Image jpeg = Image.getInstance(AnnotatedImage.class.getClassLoader().getResource("otsoe.jpg"));
             jpeg.setAnnotation(new Annotation("picture", "This is my dog", 0, 0, 0, 0));
 			jpeg.setAbsolutePosition(100f, 550f);
 			document.add(jpeg);
-            Image wmf = Image.getInstance("iText.wmf");
+            Image wmf = Image.getInstance(AnnotatedImage.class.getClassLoader().getResource("iText.wmf"));
             wmf.setAnnotation(new Annotation(0, 0, 0, 0, "http://www.lowagie.com/iText"));
 			wmf.setAbsolutePosition(100f, 200f);
 			document.add(wmf);

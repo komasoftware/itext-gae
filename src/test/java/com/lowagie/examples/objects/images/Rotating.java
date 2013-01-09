@@ -49,7 +49,7 @@ public class Rotating {
             document.open();
             
             // step 4: we add content
-            Image jpg = Image.getInstance("otsoe.jpg");
+            Image jpg = Image.getInstance(Rotating.class.getClassLoader().getResource("otsoe.jpg"));
             jpg.setAlignment(Image.MIDDLE);
             
             jpg.setRotation((float)Math.PI / 6);
