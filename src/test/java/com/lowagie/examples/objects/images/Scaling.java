@@ -16,6 +16,7 @@ package com.lowagie.examples.objects.images;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import com.lowagie.examples.directcontent.optionalcontent.OptionalContent;
 import com.lowagie.text.Document;
 import com.lowagie.text.DocumentException;
 import com.lowagie.text.Image;
@@ -48,19 +49,19 @@ public class Scaling {
             document.open();
             
             // step 4: we add content
-            Image jpg1 = Image.getInstance("otsoe.jpg");
+            Image jpg1 = Image.getInstance(Scaling.class.getClassLoader().getResource("otsoe.jpg"));
             jpg1.scaleAbsolute(160, 120);
             document.add(new Paragraph("scaleAbsolute(160, 120)"));
             document.add(jpg1);
-            Image jpg2 = Image.getInstance("otsoe.jpg");
+            Image jpg2 = Image.getInstance(Scaling.class.getClassLoader().getResource("otsoe.jpg"));
             jpg2.scalePercent(50);
             document.add(new Paragraph("scalePercent(50)"));
             document.add(jpg2);
-            Image jpg3 = Image.getInstance("otsoe.jpg");
+            Image jpg3 = Image.getInstance(Scaling.class.getClassLoader().getResource("otsoe.jpg"));
             jpg3.scaleAbsolute(320, 120);
             document.add(new Paragraph("scaleAbsolute(320, 120)"));
             document.add(jpg3);
-            Image jpg4 = Image.getInstance("otsoe.jpg");
+            Image jpg4 = Image.getInstance(Scaling.class.getClassLoader().getResource("otsoe.jpg"));
             jpg4.scalePercent(100, 50);
             document.add(new Paragraph("scalePercent(100, 50)"));
             document.add(jpg4);

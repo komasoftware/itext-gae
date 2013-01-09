@@ -15,6 +15,7 @@ package com.lowagie.examples.directcontent.colors;
 
 import java.io.FileOutputStream;
 
+import com.lowagie.examples.objects.images.Alignment;
 import com.lowagie.text.Document;
 import com.lowagie.text.Font;
 import com.lowagie.text.FontFactory;
@@ -60,7 +61,7 @@ public class Patterns {
             // step 5: we create some PdfPatternPainter instances for drawing path, text, or placing image
             
             // Image instance to be placed in PdfPatternPainter canvas. Any nice one?
-            Image img = Image.getInstance("pngnow.png");
+            Image img = Image.getInstance(Patterns.class.getClassLoader().getResource("pngnow.png"));
 
             PdfPatternPainter p = cb.createPattern(60f, 60f, 60f, 60f);
             PdfPatternPainter p1 = cb.createPattern(60f, 60f, 60f, 60f);

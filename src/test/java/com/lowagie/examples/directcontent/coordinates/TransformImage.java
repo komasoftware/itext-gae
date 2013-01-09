@@ -16,6 +16,7 @@ package com.lowagie.examples.directcontent.coordinates;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import com.lowagie.examples.directcontent.Layers;
 import com.lowagie.text.Document;
 import com.lowagie.text.DocumentException;
 import com.lowagie.text.Image;
@@ -47,7 +48,7 @@ public class TransformImage {
             
             // step 4:
             PdfContentByte cb = writer.getDirectContent();
-            Image img = Image.getInstance("hitchcock.png");
+            Image img = Image.getInstance(TransformImage.class.getClassLoader().getResource("hitchcock.png"));
             cb.addImage(img, 271, -50, -30, 550, 100, 100);
             cb.sanityCheck();
    
