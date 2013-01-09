@@ -56,7 +56,7 @@ public class ColumnIrregular {
             PdfContentByte cb = writer.getDirectContent();
             
             PdfTemplate t = cb.createTemplate(600, 800);
-            Image caesar = Image.getInstance("caesar_coin.jpg");
+            Image caesar = Image.getInstance(ColumnIrregular.class.getClassLoader().getResource("caesar_coin.jpg"));
             cb.addImage(caesar, 100, 0, 0, 100, 260, 595);
             t.setGrayFill(0.75f);
             t.moveTo(310, 112);
