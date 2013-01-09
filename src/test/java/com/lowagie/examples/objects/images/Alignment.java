@@ -39,11 +39,11 @@ public class Alignment {
             // step 3: we open the document
             document.open();
             
-            Image gif = Image.getInstance("vonnegut.gif");
+            Image gif = Image.getInstance(Alignment.class.getClassLoader().getResource("vonnegut.gif"));
             gif.setAlignment(Image.RIGHT);
-            Image jpeg = Image.getInstance("otsoe.jpg");
+            Image jpeg = Image.getInstance(Alignment.class.getClassLoader().getResource("otsoe.jpg"));
             jpeg.setAlignment(Image.MIDDLE);
-            Image png = Image.getInstance("hitchcock.png");
+            Image png = Image.getInstance(Alignment.class.getClassLoader().getResource("hitchcock.png"));
             png.setAlignment(Image.LEFT);
             
             document.add(gif);
