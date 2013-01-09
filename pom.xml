@@ -58,7 +58,7 @@
 			<optional>true</optional>
 		</dependency>
 		<dependency>
-			<groupId>bouncycastle</groupId>
+			<groupId>org.bouncycastle</groupId>
 			<artifactId>bctsp-jdk14</artifactId>
 			<version>1.38</version>
 			<optional>true</optional>
