@@ -280,7 +280,8 @@ public class RunAllExamplesTest {
         runSingleTest(com.lowagie.examples.fonts.FontEncoding.class);
         runSingleTest(com.lowagie.examples.fonts.EncodingFont.class);
         runSingleTest(com.lowagie.examples.fonts.getting.UsingFontFactory.class);
-        //FIXME : runSingleTest(com.lowagie.examples.fonts.getting.ChineseJapaneseKorean.class);
+        //FIXME :  where is STSong-Light", "UniGB-UCS2-H" ???
+        //runSingleTest(com.lowagie.examples.fonts.getting.ChineseJapaneseKorean.class);
         runSingleTest(com.lowagie.examples.fonts.getting.OpenTypeFont.class);
         runSingleTest(com.lowagie.examples.fonts.styles.Vertical.class);
         runSingleTest(com.lowagie.examples.fonts.styles.FontStylePropagation.class);

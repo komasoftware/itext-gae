@@ -39,7 +39,8 @@ public class OpenTypeFont {
             // step 3
             document.open();
             // step 4
-            BaseFont bf = BaseFont.createFont("liz.otf", BaseFont.CP1252, true);
+
+            BaseFont bf = BaseFont.createFont(OpenTypeFont.class.getClassLoader().getResource("liz.otf").getFile(), BaseFont.CP1252, true);
             String text = "Some text with the otf font LIZ.";
             document.add(new Paragraph(text, new Font(bf, 14)));
         }
