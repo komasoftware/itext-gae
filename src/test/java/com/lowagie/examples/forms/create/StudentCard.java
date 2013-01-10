@@ -19,6 +19,8 @@ package com.lowagie.examples.forms.create;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import util.ImageLoader;
+
 import com.lowagie.examples.objects.images.Scaling;
 import com.lowagie.text.Document;
 import com.lowagie.text.DocumentException;
@@ -86,7 +88,7 @@ public class StudentCard {
             innertable.addCell(new Paragraph("architecture", f));
             outertable.addCell(innertable);
 			outertable.getDefaultCell().setBackgroundColor(new Color(0xFF, 0xDE, 0xAD));
-			outertable.addCell(Image.getInstance(StudentCard.class.getClassLoader().getResource("bruno.jpg")));
+			outertable.addCell(Image.getInstance(ImageLoader.urlFromClassPath("bruno.jpg")));
             BarcodeEAN codeEAN = new BarcodeEAN();
             codeEAN.setCodeType(Barcode.EAN13);
             codeEAN.setCode("8010012529736");

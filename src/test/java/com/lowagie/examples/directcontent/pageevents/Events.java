@@ -24,6 +24,8 @@ import java.util.TreeSet;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
+import util.ImageLoader;
+
 import com.lowagie.text.Chunk;
 import com.lowagie.text.Document;
 import com.lowagie.text.DocumentException;
@@ -208,7 +210,7 @@ public class Events {
 			SAXParser parser = SAXParserFactory.newInstance().newSAXParser();
 
 			// step 4: we parse the document
-			parser.parse(Events.class.getClassLoader().getResourceAsStream("playRomeoJuliet.xml"), new Events().getXmlHandler(document));
+			parser.parse(ImageLoader.inputStreamFromClassPath("playRomeoJuliet.xml"), new Events().getXmlHandler(document));
 
 			document.newPage();
 			Speaker speaker;
@@ -290,7 +292,7 @@ public class Events {
 		 * @throws IOException
 		 */
 		public RomeoJulietMap() throws IOException {
-			super(Events.class.getClassLoader().getResourceAsStream("tagmapRomeoJuliet.xml"));
+			super(ImageLoader.inputStreamFromClassPath("tagmapRomeoJuliet.xml"));
 			XmlPeer peer = new XmlPeer(ElementTags.CHUNK, "SPEAKER");
 			peer.addValue(Markup.CSS_KEY_FONTSIZE, "10");
 			peer.addValue(Markup.CSS_KEY_FONTWEIGHT, Markup.CSS_VALUE_BOLD);

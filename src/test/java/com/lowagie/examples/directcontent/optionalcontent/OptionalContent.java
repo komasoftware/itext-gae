@@ -18,6 +18,8 @@ import com.lowagie.text.awt.Color;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 
+import util.ImageLoader;
+
 import com.lowagie.text.Chunk;
 import com.lowagie.text.Document;
 import com.lowagie.text.Element;
@@ -87,7 +89,7 @@ public class OptionalContent {
             PdfFormField form = ff.getTextField();
             form.setLayer(l4);
             writer.addAnnotation(form);
-            Image img = Image.getInstance(OptionalContent.class.getClassLoader().getResource("pngnow.png"));
+            Image img = Image.getInstance(ImageLoader.urlFromClassPath("pngnow.png"));
             img.setLayer(l4);
             img.setAbsolutePosition(200, 550);
             cb.addImage(img);

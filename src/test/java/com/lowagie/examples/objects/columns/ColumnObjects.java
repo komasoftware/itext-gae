@@ -16,6 +16,8 @@ package com.lowagie.examples.objects.columns;
 import com.lowagie.text.awt.Color;
 import java.io.FileOutputStream;
 
+import util.ImageLoader;
+
 import com.lowagie.text.Chunk;
 import com.lowagie.text.Document;
 import com.lowagie.text.Element;
@@ -119,7 +121,7 @@ public class ColumnObjects {
                 cb.lineTo(x, document.bottom());
             }
             cb.stroke();
-            Image img = Image.getInstance(ColumnObjects.class.getClassLoader().getResource("cover.png"));
+            Image img = Image.getInstance(ImageLoader.fileFromClassPath("cover.png"));
             cb.addImage(img, img.getScaledWidth(), 0, 0, img.getScaledHeight(), document.left(), currentY - img.getScaledHeight());
             currentY -= img.getScaledHeight() + 10;
             ct.setYLine(currentY);

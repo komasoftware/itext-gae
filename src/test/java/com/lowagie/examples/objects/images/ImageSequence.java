@@ -16,6 +16,8 @@ package com.lowagie.examples.objects.images;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import util.ImageLoader;
+
 import com.lowagie.text.Document;
 import com.lowagie.text.DocumentException;
 import com.lowagie.text.Image;
@@ -54,10 +56,10 @@ public class ImageSequence {
             
             // step 4:
             document.add(new Paragraph("1st image"));
-            Image jpg = Image.getInstance(ImageSequence.class.getClassLoader().getResource("otsoe.jpg"));
+            Image jpg = Image.getInstance(ImageLoader.fileFromClassPath("otsoe.jpg"));
             document.add(jpg);
             document.add(new Paragraph("2nd image"));
-            Image gif= Image.getInstance(ImageSequence.class.getClassLoader().getResource("getacro.gif"));
+            Image gif= Image.getInstance(ImageLoader.fileFromClassPath("getacro.gif"));
             document.add(gif);
             document.add(new Paragraph("3rd image"));
             document.add(jpg);

@@ -15,6 +15,8 @@ package com.lowagie.examples.general.copystamp;
 
 import java.io.FileOutputStream;
 
+import util.ImageLoader;
+
 import com.lowagie.text.pdf.PdfEncryptor;
 import com.lowagie.text.pdf.PdfReader;
 import com.lowagie.text.pdf.PdfWriter;
@@ -31,7 +33,7 @@ public class EncryptorExample {
 	public static void main(String[] args) {
 		System.out.println("Encryptor example");
 		try {
-			PdfReader reader = new PdfReader(AddWatermarkPageNumbers.class.getClassLoader().getResource("ChapterSection.pdf"));
+			PdfReader reader = new PdfReader(ImageLoader.fileFromClassPath("ChapterSection.pdf"));
 			PdfEncryptor.encrypt(reader,
 					new FileOutputStream("encrypted.pdf"),
 					"Hello".getBytes(),

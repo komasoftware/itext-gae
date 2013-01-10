@@ -15,6 +15,8 @@ package com.lowagie.examples.general.copystamp;
 
 import java.io.FileOutputStream;
 
+import util.ImageLoader;
+
 import com.lowagie.text.Document;
 import com.lowagie.text.Rectangle;
 import com.lowagie.text.pdf.BaseFont;
@@ -37,7 +39,7 @@ public class TwoOnOne {
         System.out.println("Import pages as images");
         try {
             // we create a reader for a certain document
-            PdfReader reader = new PdfReader(AddWatermarkPageNumbers.class.getClassLoader().getResource("ChapterSection.pdf"));
+            PdfReader reader = new PdfReader(ImageLoader.fileFromClassPath("ChapterSection.pdf"));
             // we retrieve the total number of pages
             int n = reader.getNumberOfPages();
             // we retrieve the size of the first page

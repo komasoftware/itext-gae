@@ -17,6 +17,8 @@ import com.lowagie.text.awt.Color;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import util.ImageLoader;
+
 import com.lowagie.text.Document;
 import com.lowagie.text.DocumentException;
 import com.lowagie.text.Element;
@@ -112,21 +114,21 @@ public class DvdCover {
         }
         if (args.length > 3) {
         	try {
-				cover.setFront(Image.getInstance(DvdCover.class.getClassLoader().getResource(args[3])));
+				cover.setFront(Image.getInstance(ImageLoader.fileFromClassPath(args[3])));
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
         }
         if (args.length > 4) {
         	try {
-        		cover.setBack(Image.getInstance(DvdCover.class.getClassLoader().getResource(args[4])));
+        		cover.setBack(Image.getInstance(ImageLoader.fileFromClassPath(args[4])));
         	} catch (Exception e) {
         		e.printStackTrace();
         	}
         }
         if (args.length > 5) {
         	try {
-        		cover.setSide(Image.getInstance(DvdCover.class.getClassLoader().getResource(args[5])));
+        		cover.setSide(Image.getInstance(ImageLoader.fileFromClassPath(args[5])));
         	} catch (Exception e) {
         		e.printStackTrace();
         	}

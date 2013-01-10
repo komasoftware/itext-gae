@@ -15,6 +15,8 @@ package com.lowagie.examples.directcontent.colors;
 
 import java.io.FileOutputStream;
 
+import util.ImageLoader;
+
 import com.lowagie.text.Document;
 import com.lowagie.text.Image;
 import com.lowagie.text.PageSize;
@@ -52,7 +54,7 @@ public class SoftMask {
             text += text;
             text += text;
             document.add(new Paragraph(text));
-            Image img = Image.getInstance(SoftMask.class.getClassLoader().getResource("otsoe.jpg"));
+            Image img = Image.getInstance(ImageLoader.urlFromClassPath("otsoe.jpg"));
             img.setAbsolutePosition(100, 550);
             byte gradient[] = new byte[256];
             for (int k = 0; k < 256; ++k)

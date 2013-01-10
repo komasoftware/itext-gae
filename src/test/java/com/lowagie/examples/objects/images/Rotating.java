@@ -16,6 +16,8 @@ package com.lowagie.examples.objects.images;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import util.ImageLoader;
+
 import com.lowagie.text.Document;
 import com.lowagie.text.DocumentException;
 import com.lowagie.text.Image;
@@ -49,7 +51,7 @@ public class Rotating {
             document.open();
             
             // step 4: we add content
-            Image jpg = Image.getInstance(Rotating.class.getClassLoader().getResource("otsoe.jpg"));
+            Image jpg = Image.getInstance(ImageLoader.fileFromClassPath("otsoe.jpg"));
             jpg.setAlignment(Image.MIDDLE);
             
             jpg.setRotation((float)Math.PI / 6);

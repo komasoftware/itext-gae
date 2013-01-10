@@ -4,21 +4,23 @@ import java.io.ByteArrayOutputStream;
 
 import org.junit.Test;
 
+import util.ImageLoader;
+
 public class AcroFieldsTest {
     
     @Test
     public void testSetFields() throws Exception {
-        singleTest(AcroFieldsTest.class.getClassLoader().getResource("register.xfdf").getFile());
+        singleTest(ImageLoader.fileFromClassPath("register.xfdf"));
     }
 
     @Test
     public void testListInSetFields() throws Exception {
-        singleTest(AcroFieldsTest.class.getClassLoader().getResource("list_register.xfdf").getFile());
+        singleTest(ImageLoader.fileFromClassPath("list_register.xfdf"));
     }
     
     private void singleTest(String xfdfFileName) throws Exception {
         // merging the FDF file
-        PdfReader pdfreader = new PdfReader(AcroFieldsTest.class.getClassLoader().getResource("SimpleRegistrationForm.pdf"));
+        PdfReader pdfreader = new PdfReader(ImageLoader.fileFromClassPath("SimpleRegistrationForm.pdf"));
         PdfStamper stamp = new PdfStamper(pdfreader, new ByteArrayOutputStream());
         XfdfReader fdfreader = new XfdfReader(xfdfFileName);
         AcroFields form = stamp.getAcroFields();

@@ -16,6 +16,8 @@ package com.lowagie.examples.html;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import util.ImageLoader;
+
 import com.lowagie.examples.objects.images.ImagesAlignment;
 import com.lowagie.text.Document;
 import com.lowagie.text.DocumentException;
@@ -52,22 +54,22 @@ public class Images {
             
             // step 4:
             document.add(new Paragraph("A picture of my dog: otsoe.jpg"));
-            Image jpg = Image.getInstance(Images.class.getClassLoader().getResource("otsoe.jpg"));
+            Image jpg = Image.getInstance(ImageLoader.urlFromClassPath("otsoe.jpg"));
             document.add(jpg);
             document.add(new Paragraph("getacro.gif"));
-            Image gif= Image.getInstance(Images.class.getClassLoader().getResource("getacro.gif"));
+            Image gif= Image.getInstance(ImageLoader.urlFromClassPath("getacro.gif"));
             document.add(gif);
             document.add(new Paragraph("pngnow.png"));
-            Image png = Image.getInstance(Images.class.getClassLoader().getResource("pngnow.png"));
+            Image png = Image.getInstance(ImageLoader.urlFromClassPath("pngnow.png"));
             document.add(png);
             document.add(new Paragraph("iText.bmp"));
-            Image bmp = Image.getInstance(Images.class.getClassLoader().getResource("iText.bmp"));
+            Image bmp = Image.getInstance(ImageLoader.urlFromClassPath("iText.bmp"));
             document.add(bmp);
             document.add(new Paragraph("iText.wmf"));
-            Image wmf = Image.getInstance(Images.class.getClassLoader().getResource("iText.wmf"));
+            Image wmf = Image.getInstance(ImageLoader.urlFromClassPath("iText.wmf"));
             document.add(wmf);
             document.add(new Paragraph("iText.tif"));
-            Image tiff = Image.getInstance(Images.class.getClassLoader().getResource("iText.tif"));
+            Image tiff = Image.getInstance(ImageLoader.urlFromClassPath("iText.tif"));
             document.add(tiff);
         }
         catch(DocumentException de) {

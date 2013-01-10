@@ -17,6 +17,8 @@ package com.lowagie.examples.objects.anchors;
 import java.io.FileOutputStream;
 import java.net.URL;
 
+import util.ImageLoader;
+
 import com.lowagie.text.Annotation;
 import com.lowagie.text.Chunk;
 import com.lowagie.text.Document;
@@ -73,7 +75,7 @@ public class SimpleAnnotations {
             Annotation a3 = new Annotation(250f, 400f, 350f, 500f,
             		"http://www.lowagie.com/iText");
             document1.add(a3);
-			Image image = Image.getInstance(SimpleAnnotations.class.getClassLoader().getResource("iText.gif"));
+			Image image = Image.getInstance(ImageLoader.fileFromClassPath("iText.gif"));
 			image.setAnnotation(a3);
 			document1.add(image);
             Annotation a4 = new Annotation(

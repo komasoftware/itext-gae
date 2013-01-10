@@ -15,6 +15,8 @@ package com.lowagie.examples.fonts.getting;
 
 import java.io.FileOutputStream;
 
+import util.ImageLoader;
+
 import com.lowagie.text.Document;
 import com.lowagie.text.Font;
 import com.lowagie.text.PageSize;
@@ -40,7 +42,7 @@ public class OpenTypeFont {
             document.open();
             // step 4
 
-            BaseFont bf = BaseFont.createFont(OpenTypeFont.class.getClassLoader().getResource("liz.otf").getFile(), BaseFont.CP1252, true);
+            BaseFont bf = BaseFont.createFont(ImageLoader.fileFromClassPath("liz.otf"), BaseFont.CP1252, true);
             String text = "Some text with the otf font LIZ.";
             document.add(new Paragraph(text, new Font(bf, 14)));
         }

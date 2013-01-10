@@ -16,6 +16,8 @@ package com.lowagie.examples.directcontent.pageevents;
 
 import java.io.FileOutputStream;
 
+import util.ImageLoader;
+
 import com.lowagie.examples.objects.images.Scaling;
 import com.lowagie.text.Chunk;
 import com.lowagie.text.Document;
@@ -84,7 +86,7 @@ public class PageNumbersWatermark extends PdfPageEventHelper {
     public void onOpenDocument(PdfWriter writer, Document document) {
         try {
         	// initialization of the header table
-            headerImage = Image.getInstance(PageNumbersWatermark.class.getClassLoader().getResource("logo.gif"));
+            headerImage = Image.getInstance(ImageLoader.urlFromClassPath("logo.gif"));
             table = new PdfPTable(2);
             Phrase p = new Phrase();
             Chunk ck = new Chunk("lowagie.com\n", new Font(Font.TIMES_ROMAN, 16, Font.BOLDITALIC, Color.blue));

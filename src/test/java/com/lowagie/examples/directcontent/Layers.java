@@ -16,6 +16,8 @@ package com.lowagie.examples.directcontent;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import util.ImageLoader;
+
 import com.lowagie.examples.directcontent.colors.SoftMask;
 import com.lowagie.text.Chunk;
 import com.lowagie.text.Document;
@@ -55,7 +57,7 @@ public class Layers {
             Paragraph p = new Paragraph();
             for (int i = 0; i < 100; i++) p.add(new Chunk("Blah blah blah blah blah. "));
             document.add(p);
-            Image img = Image.getInstance(Layers.class.getClassLoader().getResource("hitchcock.png"));
+            Image img = Image.getInstance(ImageLoader.urlFromClassPath("hitchcock.png"));
             img.setAbsolutePosition(100, 500);
             document.add(img);
             

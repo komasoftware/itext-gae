@@ -16,6 +16,8 @@ package com.lowagie.examples.objects.images;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import util.ImageLoader;
+
 import com.lowagie.examples.html.Images;
 import com.lowagie.text.Chunk;
 import com.lowagie.text.Document;
@@ -47,11 +49,11 @@ public class ImagesAlignment {
             document.open();
             
             // step 4: content
-            Image gif = Image.getInstance(Images.class.getClassLoader().getResource("vonnegut.gif"));
+            Image gif = Image.getInstance(ImageLoader.fileFromClassPath("vonnegut.gif"));
             gif.setAlignment(Image.RIGHT | Image.TEXTWRAP);
-            Image jpeg = Image.getInstance(Images.class.getClassLoader().getResource("otsoe.jpg"));
+            Image jpeg = Image.getInstance(ImageLoader.fileFromClassPath("otsoe.jpg"));
             jpeg.setAlignment(Image.MIDDLE);
-            Image png = Image.getInstance(Images.class.getClassLoader().getResource("hitchcock.png"));
+            Image png = Image.getInstance(ImageLoader.fileFromClassPath("hitchcock.png"));
             png.setAlignment(Image.LEFT | Image.UNDERLYING);
             
             for (int i = 0; i < 100; i++) {

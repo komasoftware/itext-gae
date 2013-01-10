@@ -16,6 +16,8 @@ package com.lowagie.examples.objects.tables.alternatives;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import util.ImageLoader;
+
 import com.lowagie.text.Cell;
 import com.lowagie.text.Document;
 import com.lowagie.text.DocumentException;
@@ -49,13 +51,13 @@ public class TableWithImage {
 			document.open();
 			// step 4: we create a table and add it to the document
 			Table table = new Table(2, 2); // 2 rows, 2 columns
-			table.addCell(new Cell(Image.getInstance(TableWithImage.class.getClassLoader().getResource("otsoe.jpg"))));
-			table.addCell(new Cell(Image.getInstance(TableWithImage.class.getClassLoader().getResource("iText.gif"))));
+			table.addCell(new Cell(Image.getInstance(ImageLoader.fileFromClassPath("otsoe.jpg"))));
+			table.addCell(new Cell(Image.getInstance(ImageLoader.fileFromClassPath("iText.gif"))));
 			Cell c1 = new Cell();
-			c1.add(Image.getInstance(TableWithImage.class.getClassLoader().getResource("iText.gif")));
+			c1.add(Image.getInstance(ImageLoader.fileFromClassPath("iText.gif")));
 			table.addCell(c1);
 			Cell c2 = new Cell();
-			c2.add(Image.getInstance(TableWithImage.class.getClassLoader().getResource("otsoe.jpg")));
+			c2.add(Image.getInstance(ImageLoader.fileFromClassPath("otsoe.jpg")));
 			table.addCell(c2);
 			document.add(table);
 			document.add(new Paragraph("converted to PdfPTable:"));
