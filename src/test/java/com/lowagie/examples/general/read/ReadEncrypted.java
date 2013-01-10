@@ -16,7 +16,7 @@ package com.lowagie.examples.general.read;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 
-import util.ImageLoader;
+import util.ResourceLoader;
 
 import com.lowagie.text.pdf.PdfReader;
 import com.lowagie.text.pdf.PdfWriter;
@@ -36,7 +36,7 @@ public class ReadEncrypted {
 		try {
 			BufferedWriter out = new BufferedWriter(new FileWriter(
 					"info_encrypted.txt"));
-			PdfReader r = new PdfReader(ImageLoader.fileFromClassPath("HelloEncrypted.pdf"), "Hello"
+			PdfReader r = new PdfReader(ResourceLoader.fileFromClassPath("HelloEncrypted.pdf"), "Hello"
 						.getBytes());
 			out.write(r.getInfo().toString());
 			out.write("\r\n");

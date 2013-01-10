@@ -15,7 +15,7 @@ package com.lowagie.examples.forms.fill;
 
 import java.io.FileOutputStream;
 
-import util.ImageLoader;
+import util.ResourceLoader;
 
 import com.lowagie.text.pdf.AcroFields;
 import com.lowagie.text.pdf.PdfReader;
@@ -35,7 +35,7 @@ public class XfdfExample {
             // merging the FDF file
             PdfReader pdfreader = new PdfReader("SimpleRegistrationForm.pdf");
             PdfStamper stamp = new PdfStamper(pdfreader, new FileOutputStream("registered_xfdf.pdf"));
-            XfdfReader fdfreader = new XfdfReader(ImageLoader.fileFromClassPath("register.xfdf"));
+            XfdfReader fdfreader = new XfdfReader(ResourceLoader.fileFromClassPath("register.xfdf"));
             AcroFields form = stamp.getAcroFields();
             form.setFields(fdfreader);
             stamp.close();

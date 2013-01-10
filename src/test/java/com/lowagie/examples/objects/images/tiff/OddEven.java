@@ -16,7 +16,7 @@ package com.lowagie.examples.objects.images.tiff;
 
 import java.io.FileOutputStream;
 
-import util.ImageLoader;
+import util.ResourceLoader;
 
 import com.lowagie.text.Document;
 import com.lowagie.text.Image;
@@ -50,8 +50,8 @@ public class OddEven {
 			System.exit(1);
 		}
 		try {
-			RandomAccessFileOrArray odd = new RandomAccessFileOrArray(ImageLoader.fileFromClassPath(args[0]));
-			RandomAccessFileOrArray even = new RandomAccessFileOrArray(ImageLoader.fileFromClassPath(args[1]));
+			RandomAccessFileOrArray odd = new RandomAccessFileOrArray(ResourceLoader.fileFromClassPath(args[0]));
+			RandomAccessFileOrArray even = new RandomAccessFileOrArray(ResourceLoader.fileFromClassPath(args[1]));
 			Image img = TiffImage.getTiffImage(odd, 1);
 			Document document = new Document(new Rectangle(img.getScaledWidth(),
 					img.getScaledHeight()));

@@ -8,7 +8,7 @@ import java.util.List;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import util.ImageLoader;
+import util.ResourceLoader;
 
 public class PdfReaderTest {
 
@@ -17,7 +17,7 @@ public class PdfReaderTest {
 	/* commit 3265 incorrectly closed the input stream, make sure
 	 * the constructor contract is kept, i.e. file is still open
 	 */
-        RandomAccessFileOrArray f = new RandomAccessFileOrArray(ImageLoader.fileFromClassPath("RomeoJuliet.pdf"));
+        RandomAccessFileOrArray f = new RandomAccessFileOrArray(ResourceLoader.fileFromClassPath("RomeoJuliet.pdf"));
         PdfReader r = new PdfReader(f, null);
 
         assertTrue("kept open", f.isOpen());
@@ -41,7 +41,7 @@ public class PdfReaderTest {
 
     @Test
     public void testGetLink2() throws Exception {
-        String filename = ImageLoader.fileFromClassPath("getLinkTest2.pdf");
+        String filename = ResourceLoader.fileFromClassPath("getLinkTest2.pdf");
 	PdfReader rdr = new PdfReader(new
 		RandomAccessFileOrArray(filename), new byte[0]);
 	// this one works: PdfReader rdr = new PdfReader(filename);

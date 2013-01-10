@@ -15,7 +15,7 @@ package com.lowagie.examples.objects.images;
 
 import java.io.FileOutputStream;
 
-import util.ImageLoader;
+import util.ResourceLoader;
 
 import com.lowagie.text.Document;
 import com.lowagie.text.Image;
@@ -73,7 +73,7 @@ public class ImageMasks {
             Image mask = Image.getInstance(8, 8, 1, 1, maskr);
             mask.makeMask();
             mask.setInverted(true);
-            Image image = Image.getInstance(ImageLoader.fileFromClassPath("otsoe.jpg"));
+            Image image = Image.getInstance(ResourceLoader.fileFromClassPath("otsoe.jpg"));
             image.setImageMask(mask);
             image.setAbsolutePosition(60, 550);
             // explicit masking

@@ -16,7 +16,7 @@ package com.lowagie.examples.objects.tables;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-import util.ImageLoader;
+import util.ResourceLoader;
 
 import com.lowagie.text.Document;
 import com.lowagie.text.DocumentException;
@@ -49,7 +49,7 @@ public class ImageCell {
 
 			// step 3: we open the document
 			document.open();
-			Image image = Image.getInstance(ImageLoader.fileFromClassPath("otsoe.jpg"));
+			Image image = Image.getInstance(ResourceLoader.fileFromClassPath("otsoe.jpg"));
 			float[] widths = {1f, 4f};
 			PdfPTable table = new PdfPTable(widths);
 			table.addCell("This is my dog");

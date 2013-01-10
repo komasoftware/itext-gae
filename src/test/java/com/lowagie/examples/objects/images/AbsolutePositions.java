@@ -16,7 +16,7 @@ package com.lowagie.examples.objects.images;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-import util.ImageLoader;
+import util.ResourceLoader;
 
 import com.lowagie.examples.html.Images;
 import com.lowagie.text.Document;
@@ -50,7 +50,7 @@ public class AbsolutePositions {
             document.open();
             
             // step 4: we add content
-            Image png = Image.getInstance(ImageLoader.fileFromClassPath("hitchcock.png"));
+            Image png = Image.getInstance(ResourceLoader.fileFromClassPath("hitchcock.png"));
             png.setAbsolutePosition(171, 250);
             document.add(png);
             png.setAbsolutePosition(342, 500);

@@ -16,7 +16,7 @@ package com.lowagie.examples.general.copystamp;
 import java.io.FileOutputStream;
 import java.util.HashMap;
 
-import util.ImageLoader;
+import util.ResourceLoader;
 
 import com.lowagie.text.Element;
 import com.lowagie.text.Image;
@@ -38,7 +38,7 @@ public class AddWatermarkPageNumbers {
         System.out.println("Add watermarks and pagenumbers");
         try {
             // we create a reader for a certain document
-            PdfReader reader = new PdfReader(ImageLoader.urlFromClassPath("ChapterSection.pdf"));
+            PdfReader reader = new PdfReader(ResourceLoader.urlFromClassPath("ChapterSection.pdf"));
             int n = reader.getNumberOfPages();
             // we create a stamper that will copy the document to a new file
             PdfStamper stamp = new PdfStamper(reader, new FileOutputStream("watermark_pagenumbers.pdf"));
@@ -51,7 +51,7 @@ public class AddWatermarkPageNumbers {
             PdfContentByte under;
             PdfContentByte over;
             
-            Image img = Image.getInstance(ImageLoader.urlFromClassPath("watermark.jpg"));
+            Image img = Image.getInstance(ResourceLoader.urlFromClassPath("watermark.jpg"));
             BaseFont bf = BaseFont.createFont(BaseFont.HELVETICA, BaseFont.WINANSI, BaseFont.EMBEDDED);
             img.setAbsolutePosition(200, 400);
             while (i < n) {
@@ -77,7 +77,7 @@ public class AddWatermarkPageNumbers {
             over.showTextAligned(Element.ALIGN_LEFT, "DUPLICATE OF AN EXISTING PDF DOCUMENT", 30, 600, 0);
             over.endText();
             // adding a page from another document
-            PdfReader reader2 = new PdfReader(ImageLoader.urlFromClassPath("SimpleAnnotations1.pdf"));
+            PdfReader reader2 = new PdfReader(ResourceLoader.urlFromClassPath("SimpleAnnotations1.pdf"));
             under = stamp.getUnderContent(1);
             under.addTemplate(stamp.getImportedPage(reader2, 3), 1, 0, 0, 1, 0, 0);
             // closing PdfStamper will generate the new PDF file

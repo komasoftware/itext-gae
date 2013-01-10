@@ -17,7 +17,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 
-import util.ImageLoader;
+import util.ResourceLoader;
 
 import com.lowagie.text.Document;
 import com.lowagie.text.DocumentException;
@@ -52,7 +52,7 @@ public class RawData {
             // step 4: we add content (example by Paulo Soares)
             
             // creation a jpeg passed as an array of bytes to the Image
-            RandomAccessFile rf = new RandomAccessFile(ImageLoader.fileFromClassPath("otsoe.jpg"), "r");
+            RandomAccessFile rf = new RandomAccessFile(ResourceLoader.fileFromClassPath("otsoe.jpg"), "r");
             int size = (int)rf.length();
             byte imext[] = new byte[size];
             rf.readFully(imext);

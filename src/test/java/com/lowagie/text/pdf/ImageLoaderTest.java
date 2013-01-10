@@ -8,24 +8,24 @@ import junit.framework.Assert;
 
 import org.junit.Test;
 
-import util.ImageLoader;
+import util.ResourceLoader;
 
 
 public class ImageLoaderTest {
 
 	@Test
 	public void urlFromClassPath(){
-		URL url=ImageLoader.urlFromClassPath("otsoe.jpg");
+		URL url=ResourceLoader.urlFromClassPath("otsoe.jpg");
 		Assert.assertNotNull(url.getFile());
 	}
 	@Test
 	public void inputStreamFromClassPath() throws IOException{
-		InputStream in=ImageLoader.inputStreamFromClassPath("otsoe.jpg");
+		InputStream in=ResourceLoader.inputStreamFromClassPath("otsoe.jpg");
 		Assert.assertNotNull(in.available()>0);
 	}
 	@Test
 	public void  fileFromClassPath(){
-		String fileFullPath=ImageLoader.fileFromClassPath("playRomeoJuliet.xml");
+		String fileFullPath=ResourceLoader.fileFromClassPath("playRomeoJuliet.xml");
 		Assert.assertNotNull(fileFullPath);
 	}
 }

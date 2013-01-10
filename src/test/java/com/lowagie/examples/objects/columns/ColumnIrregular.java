@@ -16,7 +16,7 @@ package com.lowagie.examples.objects.columns;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-import util.ImageLoader;
+import util.ResourceLoader;
 
 import com.lowagie.text.Document;
 import com.lowagie.text.DocumentException;
@@ -58,7 +58,7 @@ public class ColumnIrregular {
             PdfContentByte cb = writer.getDirectContent();
             
             PdfTemplate t = cb.createTemplate(600, 800);
-            Image caesar = Image.getInstance(ImageLoader.fileFromClassPath("caesar_coin.jpg"));
+            Image caesar = Image.getInstance(ResourceLoader.fileFromClassPath("caesar_coin.jpg"));
             cb.addImage(caesar, 100, 0, 0, 100, 260, 595);
             t.setGrayFill(0.75f);
             t.moveTo(310, 112);

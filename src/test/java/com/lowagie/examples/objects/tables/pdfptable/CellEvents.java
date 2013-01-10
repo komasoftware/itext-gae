@@ -15,7 +15,7 @@ package com.lowagie.examples.objects.tables.pdfptable;
 
 import java.io.FileOutputStream;
 
-import util.ImageLoader;
+import util.ResourceLoader;
 
 import com.lowagie.text.Document;
 import com.lowagie.text.Image;
@@ -63,7 +63,7 @@ public class CellEvents implements PdfPCellEvent {
 			document.open();
 			// step4
 			CellEvents event = new CellEvents();
-			Image im = Image.getInstance(ImageLoader.fileFromClassPath("otsoe.jpg"));
+			Image im = Image.getInstance(ResourceLoader.fileFromClassPath("otsoe.jpg"));
 			im.setRotationDegrees(30);
 			PdfPTable table = new PdfPTable(4);
 			table.addCell("text 1");

@@ -17,7 +17,7 @@ import com.lowagie.text.awt.Color;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-import util.ImageLoader;
+import util.ResourceLoader;
 
 import com.lowagie.text.Chunk;
 import com.lowagie.text.Document;
@@ -49,7 +49,7 @@ public class ImageChunks {
             // step 3: we open the document
             document.open();
             // step 4: we create a table and add it to the document
-            Image img = Image.getInstance(ImageLoader.fileFromClassPath("pngnow.png"));
+            Image img = Image.getInstance(ResourceLoader.fileFromClassPath("pngnow.png"));
             img.scalePercent(70);
             Chunk ck = new Chunk(img, 0, -5);
             PdfPTable table = new PdfPTable(3);

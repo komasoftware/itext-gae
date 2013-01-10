@@ -3,10 +3,10 @@ import java.io.InputStream;
 import java.net.URL;
 
 
-public class ImageLoader {
+public class ResourceLoader {
 
 	public static URL urlFromClassPath(String fileName){
-		return ImageLoader.class.getClassLoader().getResource(fileName);
+		return ResourceLoader.class.getClassLoader().getResource(fileName);
 	}
 	
 	public static String fileFromClassPath(String fileName){
@@ -14,6 +14,6 @@ public class ImageLoader {
 	}
 	
 	public static InputStream inputStreamFromClassPath(String filename){
-		return ImageLoader.class.getClassLoader().getResourceAsStream(filename);
+		return ResourceLoader.class.getClassLoader().getResourceAsStream(filename);
 	}
 }
