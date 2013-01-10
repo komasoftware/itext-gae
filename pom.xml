@@ -46,18 +46,6 @@
 	</build>
 	<dependencies>
 		<dependency>
-			<groupId>bouncycastle</groupId>
-			<artifactId>bcmail-jdk14</artifactId>
-			<version>138</version>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>bouncycastle</groupId>
-			<artifactId>bcprov-jdk14</artifactId>
-			<version>138</version>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
 			<groupId>org.bouncycastle</groupId>
 			<artifactId>bctsp-jdk14</artifactId>
 			<version>1.38</version>

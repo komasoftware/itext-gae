@@ -31,7 +31,7 @@ public class EncryptorExample {
 	public static void main(String[] args) {
 		System.out.println("Encryptor example");
 		try {
-			PdfReader reader = new PdfReader("ChapterSection.pdf");
+			PdfReader reader = new PdfReader(AddWatermarkPageNumbers.class.getClassLoader().getResource("ChapterSection.pdf"));
 			PdfEncryptor.encrypt(reader,
 					new FileOutputStream("encrypted.pdf"),
 					"Hello".getBytes(),

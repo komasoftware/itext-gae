@@ -208,7 +208,7 @@ public class Events {
 			SAXParser parser = SAXParserFactory.newInstance().newSAXParser();
 
 			// step 4: we parse the document
-			parser.parse("playRomeoJuliet.xml", new Events().getXmlHandler(document));
+			parser.parse(Events.class.getClassLoader().getResourceAsStream("playRomeoJuliet.xml"), new Events().getXmlHandler(document));
 
 			document.newPage();
 			Speaker speaker;
@@ -290,7 +290,7 @@ public class Events {
 		 * @throws IOException
 		 */
 		public RomeoJulietMap() throws IOException {
-			super(new FileInputStream("tagmapRomeoJuliet.xml"));
+			super(Events.class.getClassLoader().getResourceAsStream("tagmapRomeoJuliet.xml"));
 			XmlPeer peer = new XmlPeer(ElementTags.CHUNK, "SPEAKER");
 			peer.addValue(Markup.CSS_KEY_FONTSIZE, "10");
 			peer.addValue(Markup.CSS_KEY_FONTWEIGHT, Markup.CSS_VALUE_BOLD);

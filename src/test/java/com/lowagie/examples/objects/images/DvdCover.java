@@ -112,21 +112,21 @@ public class DvdCover {
         }
         if (args.length > 3) {
         	try {
-				cover.setFront(Image.getInstance(args[3]));
+				cover.setFront(Image.getInstance(DvdCover.class.getClassLoader().getResource(args[3])));
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
         }
         if (args.length > 4) {
         	try {
-        		cover.setBack(Image.getInstance(args[4]));
+        		cover.setBack(Image.getInstance(DvdCover.class.getClassLoader().getResource(args[4])));
         	} catch (Exception e) {
         		e.printStackTrace();
         	}
         }
         if (args.length > 5) {
         	try {
-        		cover.setSide(Image.getInstance(args[5]));
+        		cover.setSide(Image.getInstance(DvdCover.class.getClassLoader().getResource(args[5])));
         	} catch (Exception e) {
         		e.printStackTrace();
         	}

@@ -49,22 +49,22 @@ public class Images {
             
             // step 4:
             document.add(new Paragraph("A picture of my dog: otsoe.jpg"));
-            Image jpg = Image.getInstance("otsoe.jpg");
+            Image jpg = Image.getInstance(Images.class.getClassLoader().getResource("otsoe.jpg"));
             document.add(jpg);
             document.add(new Paragraph("getacro.gif"));
-            Image gif= Image.getInstance("getacro.gif");
+            Image gif= Image.getInstance(Images.class.getClassLoader().getResource("getacro.gif"));
             document.add(gif);
             document.add(new Paragraph("pngnow.png"));
-            Image png = Image.getInstance("pngnow.png");
+            Image png = Image.getInstance(Images.class.getClassLoader().getResource("pngnow.png"));
             document.add(png);
             document.add(new Paragraph("iText.bmp"));
-            Image bmp = Image.getInstance("iText.bmp");
+            Image bmp = Image.getInstance(Images.class.getClassLoader().getResource("iText.bmp"));
             document.add(bmp);
             document.add(new Paragraph("iText.wmf"));
-            Image wmf = Image.getInstance("iText.wmf");
+            Image wmf = Image.getInstance(Images.class.getClassLoader().getResource("iText.wmf"));
             document.add(wmf);
             document.add(new Paragraph("iText.tif"));
-            Image tiff = Image.getInstance("iText.tif");
+            Image tiff = Image.getInstance(Images.class.getClassLoader().getResource("iText.tif"));
             document.add(tiff);
         }
         catch(DocumentException de) {

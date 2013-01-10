@@ -48,8 +48,8 @@ public class OddEven {
 			System.exit(1);
 		}
 		try {
-			RandomAccessFileOrArray odd = new RandomAccessFileOrArray(args[0]);
-			RandomAccessFileOrArray even = new RandomAccessFileOrArray(args[1]);
+			RandomAccessFileOrArray odd = new RandomAccessFileOrArray(OddEven.class.getClassLoader().getResource(args[0]));
+			RandomAccessFileOrArray even = new RandomAccessFileOrArray(OddEven.class.getClassLoader().getResource(args[1]));
 			Image img = TiffImage.getTiffImage(odd, 1);
 			Document document = new Document(new Rectangle(img.getScaledWidth(),
 					img.getScaledHeight()));

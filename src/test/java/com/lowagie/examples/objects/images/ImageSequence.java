@@ -54,10 +54,10 @@ public class ImageSequence {
             
             // step 4:
             document.add(new Paragraph("1st image"));
-            Image jpg = Image.getInstance("otsoe.jpg");
+            Image jpg = Image.getInstance(ImageSequence.class.getClassLoader().getResource("otsoe.jpg"));
             document.add(jpg);
             document.add(new Paragraph("2nd image"));
-            Image gif= Image.getInstance("getacro.gif");
+            Image gif= Image.getInstance(ImageSequence.class.getClassLoader().getResource("getacro.gif"));
             document.add(gif);
             document.add(new Paragraph("3rd image"));
             document.add(jpg);

@@ -37,7 +37,7 @@ public class TwoOnOne {
         System.out.println("Import pages as images");
         try {
             // we create a reader for a certain document
-            PdfReader reader = new PdfReader("ChapterSection.pdf");
+            PdfReader reader = new PdfReader(AddWatermarkPageNumbers.class.getClassLoader().getResource("ChapterSection.pdf"));
             // we retrieve the total number of pages
             int n = reader.getNumberOfPages();
             // we retrieve the size of the first page
